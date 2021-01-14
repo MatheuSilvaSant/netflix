@@ -33,7 +33,7 @@ public class Filme implements Serializable {
 	
 	@ManyToMany
 	@JoinTable(
-				name = "FILME_CATEGORIA",
+				name = "tb_filme_categoria",
 				joinColumns = @JoinColumn(name="id_filme"),
 				inverseJoinColumns = @JoinColumn(name="id_categoria")
 			)
