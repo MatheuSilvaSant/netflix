@@ -1,12 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useEffect, useState} from 'react';
+import MovieRow from './components/MovieRow/MovieRow';
 
-function App() {
+import Tmdb from './Tmdb';
+
+
+
+
+export default () => {
+
+  const [movieList, setMovieList] = useState([]);
+
+  useEffect(()=>{
+    const loadAll = async () =>{
+        //Pegando a lista total
+        let list = await Tmdb.getHomeList();
+        setMovieList(list);
+    }
+    return loadAll();
+},[]);
+
   return (
-    <div>
-      Olá mundo!
+    <div className="page">
+      <section className="lists">
+        {movieList.map((item, key)=>(
+          <MovieRow key={key} />
+        ))}
+      </section>
     </div>
   );
 }
-
-export default App;
