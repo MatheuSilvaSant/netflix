@@ -11,6 +11,11 @@ import './style.css';
         genres.push(item.genres[i].name);
     }
 
+    let description =  item.overview;
+    if(description.length > 200){
+        description = description.substring(0,200) + '...';
+    }
+
   return (
      <section className="featured" style={{
          backgroundSize: 'cover',
@@ -30,7 +35,7 @@ import './style.css';
                          </div>
                     </div>
                     <div className="featured--description">
-                        {item.overview}
+                        {description}
                     </div> 
                     <div className="featured--buttons">
                         <a href={`/watch/${item.id}`} className="featured--watchbutton">► Assistir</a>
