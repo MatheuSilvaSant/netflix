@@ -10,13 +10,13 @@ import KeyboardArrowRightIcon from '@material-ui/icons/KeyboardArrowRight';
     const [scrollX, setScrollX] = useState(-400);
 
 
-    const handleLeftArrow = () => {
-        let x = scrollX + Math.round(window.innerWidth / 2);
-        if(x > 0){
-            x = 0;
-        }
-        setScrollX(x);
-    }
+    function handleLeftArrow() {
+         let x = scrollX + Math.round(window.innerWidth / 2);
+         if (x > 0) {
+             x = 0;
+         }
+         setScrollX(x);
+     }
 
     const handleRightArrow = () =>{
         let x = scrollX - Math.round(window.innerWidth / 2);
