@@ -13,7 +13,7 @@ const basicFecth = async (endpoint:string)=>{
 
 
 
- export default {
+ export default{
     getHomeList: async () =>{
         return [
             {
@@ -24,7 +24,7 @@ const basicFecth = async (endpoint:string)=>{
             {
                 slug: 'trending',
                 title: 'Recomendados para você',
-                items: await basicFecth(`/trending/all/week?language=pt-BR&api_key=${API_KEY}`)
+                items: await  basicFecth(`/trending/all/week?language=pt-BR&api_key=${API_KEY}`)
             },
             {
                 slug:'toprated',
@@ -39,7 +39,7 @@ const basicFecth = async (endpoint:string)=>{
             {
                 slug:'comedy',
                 title:'Comédia',
-                items: await basicFecth(`/discover/movie?with_genres=35&language=pt-BR&api_key=${API_KEY}`)
+                items: await  basicFecth(`/discover/movie?with_genres=35&language=pt-BR&api_key=${API_KEY}`)
             },
             {
                 slug:'horror',
@@ -57,23 +57,26 @@ const basicFecth = async (endpoint:string)=>{
                 items: await basicFecth(`/discover/movie?with_genres=99&language=pt-BR&api_key=${API_KEY}`)
             },
         ]
+       
     },
-    getMovieInfo: async (movieId:number, type:string) =>{
-         let info = {};
+    
+    getMovieInfo: async(movieId: number, type: string) =>{
+        let info = {};
 
-            if(movieId){
-                switch(type){
-                    case 'movie':
-                            info = await basicFecth(`/movie/${movieId}?language=pt-BR&api_key=${API_KEY}`);
-                        break;
-                    case 'tv':
-                            info = await basicFecth(`/tv/${movieId}?language=pt-BR&api_key=${API_KEY}`);
-                    break;    
-                    default: 
+        if (movieId) {
+            switch (type) {
+                case 'movie':
+                    info = await basicFecth(`/movie/${movieId}?language=pt-BR&api_key=${API_KEY}`);
+                    break;
+                case 'tv':
+                    info = await basicFecth(`/tv/${movieId}?language=pt-BR&api_key=${API_KEY}`);
+                    break;
+                default:
                     info = {};
-                }
             }
+        }
 
         return info;
     }
+
 }
