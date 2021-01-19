@@ -41,7 +41,7 @@ Pré-requisitos: npm / yarn
 git clone https://github.com/MatheuSilvaSant/netflix
 
 # entrar na pasta do projeto front end web
-cd front-web
+cd front-end
 
 # instalar dependências
 npm install
