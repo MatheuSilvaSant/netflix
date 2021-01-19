@@ -1,5 +1,5 @@
 # Netflix CLONE
-[![NPM](https://img.shields.io/badge/License-MIT-yellowgreen)](https://github.com/MatheuSilvaSant/dsdeliver-sds2/blob/main/LICENSE) 
+[![NPM](https://img.shields.io/badge/License-MIT-yellowgreen)](https://github.com/MatheuSilvaSant/netflix/blob/master/LICENSE) 
 
 # Sobre o projeto
 
