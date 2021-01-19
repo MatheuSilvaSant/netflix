@@ -5,7 +5,7 @@
 
 link do projeto : https://netflix-clone-matheus.herokuapp.com/
 
-Descrição do projeto
+## Descrição do projeto
 Clone do site da netflix feito durante a live / aula do Bonieky da <a href="https://b7web.com.br/fullstack/"><strong>b7web</strong></a>
 
 
