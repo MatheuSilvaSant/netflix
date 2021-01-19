@@ -1,16 +1,19 @@
+
+
 const API_KEY = 'e2efa7a08a4fe36bdb6d34acdb8cebb7';
 const API_BASE = 'https://api.themoviedb.org/3';
 
 
 
-const basicFecth = async (endpoint)=>{
+const basicFecth = async (endpoint:string)=>{
     const req = await fetch(`${API_BASE}${endpoint}`);
     const json = await req.json();
     return json;
 }
 
 
-export default {
+
+ export default {
     getHomeList: async () =>{
         return [
             {
@@ -55,8 +58,8 @@ export default {
             },
         ]
     },
-    getMovieInfo: async (movieId, type) =>{
-        let info = {};
+    getMovieInfo: async (movieId:number, type:string) =>{
+         let info = {};
 
             if(movieId){
                 switch(type){
@@ -67,7 +70,7 @@ export default {
                             info = await basicFecth(`/tv/${movieId}?language=pt-BR&api_key=${API_KEY}`);
                     break;    
                     default: 
-                    info =null;
+                    info = {};
                 }
             }
 
